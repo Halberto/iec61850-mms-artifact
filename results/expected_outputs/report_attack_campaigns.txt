@@ -1,0 +1,120 @@
+======================================================================
+  ATTACK CAMPAIGN REPORT
+  (session gap threshold: 30 minutes)
+======================================================================
+
+Total distinct attack campaigns: 16
+Total attack packets across all campaigns: 105
+
+Campaign 1
+  Start:    2026-02-14 01:42:29.429905
+  End:      2026-02-14 01:47:34.951319
+  Duration: 5m 5s
+  Packets:  5
+  Targets:  Circuit Breaker, Disconnector, Interlocking
+
+Campaign 2
+  Start:    2026-02-14 07:07:34.862275
+  End:      2026-02-14 07:07:48.105763
+  Duration: 13s
+  Packets:  3
+  Targets:  Circuit Breaker, Disconnector, Interlocking
+
+Campaign 3
+  Start:    2026-02-14 09:08:07.849938
+  End:      2026-02-14 09:08:21.872255
+  Duration: 14s
+  Packets:  5
+  Targets:  Circuit Breaker, Disconnector, Interlocking
+
+Campaign 4
+  Start:    2026-02-14 11:38:00.654929
+  End:      2026-02-14 11:38:17.182449
+  Duration: 16s
+  Packets:  2
+  Targets:  Circuit Breaker, Disconnector
+
+Campaign 5
+  Start:    2026-02-14 15:54:12.840244
+  End:      2026-02-14 15:59:55.480597
+  Duration: 5m 42s
+  Packets:  9
+  Targets:  Circuit Breaker, Disconnector, Interlocking
+
+Campaign 6
+  Start:    2026-02-15 00:52:07.224439
+  End:      2026-02-15 01:03:09.447775
+  Duration: 11m 2s
+  Packets:  6
+  Targets:  Circuit Breaker, Disconnector, Interlocking
+
+Campaign 7
+  Start:    2026-02-15 01:54:52.982528
+  End:      2026-02-15 02:02:55.890848
+  Duration: 8m 2s
+  Packets:  8
+  Targets:  Circuit Breaker, Disconnector, Interlocking
+
+Campaign 8
+  Start:    2026-02-15 05:57:12.938226
+  End:      2026-02-15 05:57:21.002867
+  Duration: 8s
+  Packets:  2
+  Targets:  Circuit Breaker, Disconnector
+
+Campaign 9
+  Start:    2026-02-15 09:54:31.687580
+  End:      2026-02-15 09:56:19.388810
+  Duration: 1m 47s
+  Packets:  3
+  Targets:  Circuit Breaker, Disconnector, Interlocking
+
+Campaign 10
+  Start:    2026-02-15 10:54:01.427673
+  End:      2026-02-15 10:54:14.126161
+  Duration: 12s
+  Packets:  5
+  Targets:  Circuit Breaker, Disconnector, Interlocking
+
+Campaign 11
+  Start:    2026-02-15 14:12:32.928308
+  End:      2026-02-15 14:27:46.516086
+  Duration: 15m 13s
+  Packets:  15
+  Targets:  Circuit Breaker, Disconnector, Earth Switch, Interlocking
+
+Campaign 12
+  Start:    2026-02-15 15:55:24.125892
+  End:      2026-02-15 16:00:53.525176
+  Duration: 5m 29s
+  Packets:  16
+  Targets:  Circuit Breaker, Disconnector, Interlocking
+
+Campaign 13
+  Start:    2026-02-16 00:09:18.654551
+  End:      2026-02-16 00:11:27.373370
+  Duration: 2m 8s
+  Packets:  4
+  Targets:  Circuit Breaker, Disconnector
+
+Campaign 14
+  Start:    2026-02-16 01:19:50.396582
+  End:      2026-02-16 01:23:51.864830
+  Duration: 4m 1s
+  Packets:  2
+  Targets:  Disconnector
+
+Campaign 15
+  Start:    2026-02-16 02:44:30.814235
+  End:      2026-02-16 03:10:49.613909
+  Duration: 26m 18s
+  Packets:  14
+  Targets:  Circuit Breaker, Disconnector, Interlocking
+
+Campaign 16
+  Start:    2026-02-16 05:30:23.952205
+  End:      2026-02-16 05:32:20.105837
+  Duration: 1m 56s
+  Packets:  6
+  Targets:  Circuit Breaker, Disconnector
+

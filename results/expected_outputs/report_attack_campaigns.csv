@@ -1,0 +1,17 @@
+campaign,start,end,duration_sec,attack_packets,switchgear_types
+1,2026-02-14 01:42:29.429905,2026-02-14 01:47:34.951319,305,5,"Circuit Breaker, Disconnector, Interlocking"
+2,2026-02-14 07:07:34.862275,2026-02-14 07:07:48.105763,13,3,"Circuit Breaker, Disconnector, Interlocking"
+3,2026-02-14 09:08:07.849938,2026-02-14 09:08:21.872255,14,5,"Circuit Breaker, Disconnector, Interlocking"
+4,2026-02-14 11:38:00.654929,2026-02-14 11:38:17.182449,16,2,"Circuit Breaker, Disconnector"
+5,2026-02-14 15:54:12.840244,2026-02-14 15:59:55.480597,342,9,"Circuit Breaker, Disconnector, Interlocking"
+6,2026-02-15 00:52:07.224439,2026-02-15 01:03:09.447775,662,6,"Circuit Breaker, Disconnector, Interlocking"
+7,2026-02-15 01:54:52.982528,2026-02-15 02:02:55.890848,482,8,"Circuit Breaker, Disconnector, Interlocking"
+8,2026-02-15 05:57:12.938226,2026-02-15 05:57:21.002867,8,2,"Circuit Breaker, Disconnector"
+9,2026-02-15 09:54:31.687580,2026-02-15 09:56:19.388810,107,3,"Circuit Breaker, Disconnector, Interlocking"
+10,2026-02-15 10:54:01.427673,2026-02-15 10:54:14.126161,12,5,"Circuit Breaker, Disconnector, Interlocking"
+11,2026-02-15 14:12:32.928308,2026-02-15 14:27:46.516086,913,15,"Circuit Breaker, Disconnector, Earth Switch, Interlocking"
+12,2026-02-15 15:55:24.125892,2026-02-15 16:00:53.525176,329,16,"Circuit Breaker, Disconnector, Interlocking"
+13,2026-02-16 00:09:18.654551,2026-02-16 00:11:27.373370,128,4,"Circuit Breaker, Disconnector"
+14,2026-02-16 01:19:50.396582,2026-02-16 01:23:51.864830,241,2,Disconnector
+15,2026-02-16 02:44:30.814235,2026-02-16 03:10:49.613909,1578,14,"Circuit Breaker, Disconnector, Interlocking"
+16,2026-02-16 05:30:23.952205,2026-02-16 05:32:20.105837,116,6,"Circuit Breaker, Disconnector"

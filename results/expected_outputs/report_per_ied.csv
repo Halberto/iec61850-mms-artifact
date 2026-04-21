@@ -1,0 +1,8 @@
+ied,switchgear,attack_packets
+E01A103,Circuit Breaker,21
+E01A103,Disconnector,24
+E01A103,Earth Switch,5
+E01A103,Interlocking,13
+E03A103,Circuit Breaker,22
+E03A103,Disconnector,33
+E03A103,Interlocking,13

@@ -1,0 +1,22 @@
+============================================================
+  PER-IED BREAKDOWN REPORT
+============================================================
+
+IED: E01A103  (total attack packets: 63)
+  Switchgear Type       Attack Packets
+  -------------------- ---------------
+  Circuit Breaker                   21
+  Disconnector                      24
+  Earth Switch                       5
+  Interlocking                      13
+
+IED: E03A103  (total attack packets: 68)
+  Switchgear Type       Attack Packets
+  -------------------- ---------------
+  Circuit Breaker                   22
+  Disconnector                      33
+  Interlocking                      13
+
+============================================================
+NOTE: One attack packet can target objects on multiple IEDs,
+      so totals may exceed 105 unique attack packets.

@@ -1,0 +1,227 @@
+{
+  "trained_rows": 75,
+  "train_start": "2026-02-14T01:39:34.309070",
+  "train_end": "2026-02-14T01:40:04.309070",
+  "window_sec": 30.0,
+  "service_probs": {
+    "REQUEST|WRITE": 0.04,
+    "RESPONSE|WRITE": 0.04,
+    "RESPONSE|UNCONFIRMED": 0.6533333333333333,
+    "REQUEST|GET_NAME_LIST": 0.13333333333333333,
+    "RESPONSE|GET_NAME_LIST": 0.13333333333333333
+  },
+  "interarrival_stats": {
+    "10.0.19.36|10.0.19.39|RESPONSE|UNCONFIRMED": {
+      "n": 19,
+      "mean": 1.2996005789473686,
+      "std": 1.1568365550167077
+    },
+    "10.0.19.39|10.0.19.49|REQUEST|WRITE": {
+      "n": 2,
+      "mean": 14.747905500000002,
+      "std": 15.520377957038304
+    },
+    "10.0.19.49|10.0.19.39|RESPONSE|WRITE": {
+      "n": 2,
+      "mean": 13.26505,
+      "std": 17.566380821799864
+    },
+    "10.0.19.49|10.0.19.39|RESPONSE|UNCONFIRMED": {
+      "n": 3,
+      "mean": 8.848571666666667,
+      "std": 14.569663065968353
+    },
+    "10.0.19.35|10.0.19.39|RESPONSE|UNCONFIRMED": {
+      "n": 23,
+      "mean": 0.8826208260869565,
+      "std": 2.7824727935015687
+    },
+    "10.0.19.39|10.0.19.48|REQUEST|GET_NAME_LIST": {
+      "n": 2,
+      "mean": 9.308216,
+      "std": 0.9776868478618289
+    },
+    "10.0.19.48|10.0.19.39|RESPONSE|GET_NAME_LIST": {
+      "n": 2,
+      "mean": 9.316999500000001,
+      "std": 0.9569848826290307
+    },
+    "10.0.19.39|10.0.19.47|REQUEST|GET_NAME_LIST": {
+      "n": 2,
+      "mean": 10.003254,
+      "std": 0.01746553749530721
+    },
+    "10.0.19.47|10.0.19.39|RESPONSE|GET_NAME_LIST": {
+      "n": 2,
+      "mean": 10.023749500000001,
+      "std": 0.019603121294833988
+    },
+    "10.0.19.39|10.0.19.37|REQUEST|GET_NAME_LIST": {
+      "n": 1,
+      "mean": 10.05102,
+      "std": 0.0
+    },
+    "10.0.19.37|10.0.19.39|RESPONSE|GET_NAME_LIST": {
+      "n": 1,
+      "mean": 10.001687,
+      "std": 0.0
+    },
+    "10.0.19.39|10.0.19.49|REQUEST|GET_NAME_LIST": {
+      "n": 1,
+      "mean": 10.020165,
+      "std": 0.0
+    },
+    "10.0.19.49|10.0.19.39|RESPONSE|GET_NAME_LIST": {
+      "n": 1,
+      "mean": 9.974294,
+      "std": 0.0
+    }
+  },
+  "size_stats": {
+    "10.0.19.39|10.0.19.49|REQUEST|WRITE": {
+      "n": 3,
+      "mean": 115.0,
+      "std": 0.0
+    },
+    "10.0.19.49|10.0.19.39|RESPONSE|WRITE": {
+      "n": 3,
+      "mean": 11.0,
+      "std": 0.0
+    },
+    "10.0.19.49|10.0.19.39|RESPONSE|UNCONFIRMED": {
+      "n": 4,
+      "mean": 193.0,
+      "std": 61.30796576846003
+    },
+    "10.0.19.36|10.0.19.39|RESPONSE|UNCONFIRMED": {
+      "n": 20,
+      "mean": 377.0,
+      "std": 219.55936734622298
+    },
+    "10.0.19.39|10.0.19.48|REQUEST|GET_NAME_LIST": {
+      "n": 3,
+      "mean": 18.0,
+      "std": 0.0
+    },
+    "10.0.19.48|10.0.19.39|RESPONSE|GET_NAME_LIST": {
+      "n": 3,
+      "mean": 67.0,
+      "std": 0.0
+    },
+    "10.0.19.35|10.0.19.39|RESPONSE|UNCONFIRMED": {
+      "n": 24,
+      "mean": 359.49999999999994,
+      "std": 201.92357572800313
+    },
+    "10.0.19.39|10.0.19.47|REQUEST|GET_NAME_LIST": {
+      "n": 3,
+      "mean": 18.0,
+      "std": 0.0
+    },
+    "10.0.19.47|10.0.19.39|RESPONSE|GET_NAME_LIST": {
+      "n": 3,
+      "mean": 67.0,
+      "std": 0.0
+    },
+    "10.0.19.39|10.0.19.37|REQUEST|GET_NAME_LIST": {
+      "n": 2,
+      "mean": 18.0,
+      "std": 0.0
+    },
+    "10.0.19.37|10.0.19.39|RESPONSE|GET_NAME_LIST": {
+      "n": 2,
+      "mean": 81.0,
+      "std": 0.0
+    },
+    "10.0.19.39|10.0.19.49|REQUEST|GET_NAME_LIST": {
+      "n": 2,
+      "mean": 18.0,
+      "std": 0.0
+    },
+    "10.0.19.49|10.0.19.39|RESPONSE|GET_NAME_LIST": {
+      "n": 2,
+      "mean": 67.0,
+      "std": 0.0
+    },
+    "10.0.19.37|10.0.19.39|RESPONSE|UNCONFIRMED": {
+      "n": 1,
+      "mean": 174.0,
+      "std": 0.0
+    }
+  },
+  "rate_stats": {
+    "10.0.19.39|10.0.19.49|REQUEST|WRITE": {
+      "n": 2,
+      "mean": 1.5,
+      "std": 0.7071067811865476
+    },
+    "10.0.19.49|10.0.19.39|RESPONSE|WRITE": {
+      "n": 2,
+      "mean": 1.5,
+      "std": 0.7071067811865476
+    },
+    "10.0.19.49|10.0.19.39|RESPONSE|UNCONFIRMED": {
+      "n": 2,
+      "mean": 2.0,
+      "std": 1.4142135623730951
+    },
+    "10.0.19.36|10.0.19.39|RESPONSE|UNCONFIRMED": {
+      "n": 2,
+      "mean": 10.0,
+      "std": 11.313708498984761
+    },
+    "10.0.19.39|10.0.19.48|REQUEST|GET_NAME_LIST": {
+      "n": 1,
+      "mean": 3.0,
+      "std": 0.0
+    },
+    "10.0.19.48|10.0.19.39|RESPONSE|GET_NAME_LIST": {
+      "n": 1,
+      "mean": 3.0,
+      "std": 0.0
+    },
+    "10.0.19.35|10.0.19.39|RESPONSE|UNCONFIRMED": {
+      "n": 1,
+      "mean": 24.0,
+      "std": 0.0
+    },
+    "10.0.19.39|10.0.19.47|REQUEST|GET_NAME_LIST": {
+      "n": 1,
+      "mean": 3.0,
+      "std": 0.0
+    },
+    "10.0.19.47|10.0.19.39|RESPONSE|GET_NAME_LIST": {
+      "n": 1,
+      "mean": 3.0,
+      "std": 0.0
+    },
+    "10.0.19.39|10.0.19.37|REQUEST|GET_NAME_LIST": {
+      "n": 1,
+      "mean": 2.0,
+      "std": 0.0
+    },
+    "10.0.19.37|10.0.19.39|RESPONSE|GET_NAME_LIST": {
+      "n": 1,
+      "mean": 2.0,
+      "std": 0.0
+    },
+    "10.0.19.39|10.0.19.49|REQUEST|GET_NAME_LIST": {
+      "n": 1,
+      "mean": 2.0,
+      "std": 0.0
+    },
+    "10.0.19.49|10.0.19.39|RESPONSE|GET_NAME_LIST": {
+      "n": 1,
+      "mean": 2.0,
+      "std": 0.0
+    },
+    "10.0.19.37|10.0.19.39|RESPONSE|UNCONFIRMED": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0
+    }
+  },
+  "allowed_origin": null,
+  "known_origins": [],
+  "write_ctlnums_by_origin": {}
+}

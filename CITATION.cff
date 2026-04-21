@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: If you use this artifact, please cite the associated ESORICS paper and software release.
+title: From MMS Command Misuse to Process Disruption: Threat Modeling and Experimental Analysis in IEC 61850 Digital Substations
+type: software
+version: 0.1.0
+license: Apache-2.0
+date-released: 2026-04-21
+repository-artifact: https://anonymous.4open.science/r/iec61850-mms-artifact-7B05/
+keywords:
+  - IEC 61850
+  - MMS
+  - digital substations
+  - cyber-physical security
+  - threat modeling
+  - dataset
+authors:
+  - family-names: Alberto
+    given-names: Hermenegildo
+    affiliation: Karlsruhe Institute of Technology; University Gaston Berger
+    email: hermenegildo.alberto@kit.edu
+  - family-names: Dembele
+    given-names: Jean
+    affiliation: University Gaston Berger
+    email: jeanmarie.dembele@ugb.edu.sn
+  - family-names: Diop
+    given-names: Idy
+    affiliation: Ecole Superieure Polytechnique (ESP/UCAD)
+    email: idy.diop@esp.sn
+  - family-names: Elbez
+    given-names: Ghada
+    affiliation: Karlsruhe Institute of Technology
+    email: ghada.elbez@kit.edu
+  - family-names: Hagenmeyer
+    given-names: Veit
+    affiliation: Karlsruhe Institute of Technology
+    email: veit.hagenmeyer@kit.edu

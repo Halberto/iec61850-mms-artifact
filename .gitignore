@@ -1,0 +1,12 @@
+.venv/
+.vscode/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+
+# Large sample files distributed as release assets, not committed to Git
+data/sample/mms_sample_100k.csv
+data/sample/mms_sample_100k.jsonl
