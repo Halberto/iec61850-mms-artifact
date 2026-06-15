@@ -1,35 +1,34 @@
 {
   "title": "From MMS Command Misuse to Process Disruption — Software Artifact (Baseline IDS, Scripts, Configs)",
-  "description": "Software artifact accompanying the ESORICS paper 'From MMS Command Misuse to Process Disruption: Threat Modeling and Experimental Analysis in IEC 61850 Digital Substations'. Contains the baseline hybrid IDS implementation (deterministic + ML fusion), feature generation and sequence-window construction, evaluation and reporting scripts, baseline configuration files, and reproduction documentation. The companion dataset record (normalized MMS corpus, ground-truth labels, sample data) is available separately on Zenodo.",
+  "description": "Software artifact accompanying the ESORICS paper 'From MMS Command Misuse to Process Disruption: Threat Modeling and Experimental Analysis in IEC 61850 Digital Substations'. Contains the baseline hybrid IDS implementation (deterministic + ML fusion), feature generation and sequence-window construction, evaluation and reporting scripts, baseline configuration files, and reproduction documentation. The companion dataset record (normalized MMS corpus, ground-truth labels, sample data) is available at https://doi.org/10.5281/zenodo.20696377.",
   "version": "0.1.0",
   "license": "Apache-2.0",
   "upload_type": "software",
   "access_right": "open",
   "creators": [
     {
-      "name": "Alberto, Hermenegildo",
+      "name": "Alberto, Hermenegildo da Conceição",
       "affiliation": "Karlsruhe Institute of Technology; University Gaston Berger",
-      "orcid": ""
+      "orcid": "0009-0000-6403-8268"
     },
     {
-      "name": "Dembele, Jean",
-      "affiliation": "University Gaston Berger",
-      "orcid": ""
+      "name": "Dembele, Jean Marie",
+      "affiliation": "University Gaston Berger of Saint Louis",
+      "orcid": "0000-0001-6729-2915"
     },
     {
       "name": "Diop, Idy",
-      "affiliation": "Ecole Superieure Polytechnique (ESP/UCAD)",
-      "orcid": ""
+      "affiliation": "Ecole Supérieure Polytechnique (ESP/UCAD)"
     },
     {
       "name": "Elbez, Ghada",
       "affiliation": "Karlsruhe Institute of Technology",
-      "orcid": ""
+      "orcid": "0000-0003-1137-1782"
     },
     {
       "name": "Hagenmeyer, Veit",
       "affiliation": "Karlsruhe Institute of Technology",
-      "orcid": ""
+      "orcid": "0000-0002-3572-9083"
     }
   ],
   "keywords": [
