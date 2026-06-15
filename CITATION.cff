@@ -5,7 +5,7 @@ type: software
 version: 0.1.0
 license: Apache-2.0
 date-released: 2026-04-21
-repository-artifact: https://anonymous.4open.science/r/iec61850-mms-artifact-7B05/
+repository-artifact: https://doi.org/10.5281/zenodo.20696377
 keywords:
   - IEC 61850
   - MMS
