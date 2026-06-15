@@ -2,7 +2,8 @@
 
 This repository accompanies the paper "From MMS Command Misuse to Process Disruption: Threat Modeling and Experimental Analysis in IEC 61850 Digital Substations". It contains the released baseline IDS, labels, sample data, and the restored full raw CSV and JSONL capture exports used for the paper-scale corpus.
 
-Dataset record: https://doi.org/10.5281/zenodo.20696377
+Dataset record: https://doi.org/10.5281/zenodo.20696377  
+Software artifact: https://doi.org/10.5281/zenodo.20697139
 
 ## Scope
 

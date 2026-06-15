@@ -5,7 +5,7 @@ type: software
 version: 0.1.0
 license: Apache-2.0
 date-released: 2026-04-21
-repository-artifact: https://doi.org/10.5281/zenodo.20696377
+repository-artifact: https://doi.org/10.5281/zenodo.20697139
 keywords:
   - IEC 61850
   - MMS
@@ -28,6 +28,7 @@ authors:
     given-names: Idy
     affiliation: Ecole Supérieure Polytechnique (ESP/UCAD)
     email: idy.diop@esp.sn
+    orcid: "https://orcid.org/0000-0002-9143-196X"
   - family-names: Elbez
     given-names: Ghada
     affiliation: Karlsruhe Institute of Technology
