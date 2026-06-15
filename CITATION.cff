@@ -15,22 +15,26 @@ keywords:
   - dataset
 authors:
   - family-names: Alberto
-    given-names: Hermenegildo
-    affiliation: Karlsruhe Institute of Technology; University Gaston Berger
+    given-names: Hermenegildo da Conceição
+    affiliation: "Karlsruhe Institute of Technology; University Gaston Berger"
     email: hermenegildo.alberto@kit.edu
+    orcid: "https://orcid.org/0009-0000-6403-8268"
   - family-names: Dembele
-    given-names: Jean
-    affiliation: University Gaston Berger
+    given-names: Jean Marie
+    affiliation: University Gaston Berger of Saint Louis
     email: jeanmarie.dembele@ugb.edu.sn
+    orcid: "https://orcid.org/0000-0001-6729-2915"
   - family-names: Diop
     given-names: Idy
-    affiliation: Ecole Superieure Polytechnique (ESP/UCAD)
+    affiliation: Ecole Supérieure Polytechnique (ESP/UCAD)
     email: idy.diop@esp.sn
   - family-names: Elbez
     given-names: Ghada
     affiliation: Karlsruhe Institute of Technology
     email: ghada.elbez@kit.edu
+    orcid: "https://orcid.org/0000-0003-1137-1782"
   - family-names: Hagenmeyer
     given-names: Veit
     affiliation: Karlsruhe Institute of Technology
     email: veit.hagenmeyer@kit.edu
+    orcid: "https://orcid.org/0000-0002-3572-9083"

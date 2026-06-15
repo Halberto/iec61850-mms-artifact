@@ -1,4 +1,4 @@
-# From MMS Command Misuse to Process Disruption
+# Unauthorized MMS Supervisory Control in IEC 61850 Digital Substations: From Attack Scenarios to a Labeled Dataset
 
 This repository accompanies the paper "From MMS Command Misuse to Process Disruption: Threat Modeling and Experimental Analysis in IEC 61850 Digital Substations". It contains the released baseline IDS, labels, sample data, and the restored full raw CSV and JSONL capture exports used for the paper-scale corpus.
 
