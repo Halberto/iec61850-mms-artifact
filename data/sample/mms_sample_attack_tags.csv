@@ -420,7 +420,7 @@ line_number,timestamp,tag,reasons,direction,service,src_ip,dst_ip,stream_id,invo
 419,2026-02-14T01:42:28.934533,normal,,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,,,,Unconfirmed <RPT>
 420,2026-02-14T01:42:29.372415,normal,,RESPONSE,UNCONFIRMED,10.0.19.35,10.0.19.39,10.0.19.35:102-10.0.19.39:56631,,,,,,,,,Unconfirmed <RPT>
 421,2026-02-14T01:42:29.386074,normal,,RESPONSE,UNCONFIRMED,10.0.19.35,10.0.19.39,10.0.19.35:102-10.0.19.39:56631,,,,,,,,,Unconfirmed <RPT>
-422,2026-02-14T01:42:29.429905,likely-attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,1,Unconfirmed <RPT>
+422,2026-02-14T01:42:29.429905,attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,1,Unconfirmed <RPT>
 423,2026-02-14T01:42:29.487242,normal,,RESPONSE,UNCONFIRMED,10.0.19.35,10.0.19.39,10.0.19.35:102-10.0.19.39:56631,,,,,,,,,Unconfirmed <RPT>
 424,2026-02-14T01:42:29.501882,normal,,RESPONSE,UNCONFIRMED,10.0.19.35,10.0.19.39,10.0.19.35:102-10.0.19.39:56631,,,,,,,,,Unconfirmed <RPT>
 425,2026-02-14T01:42:29.511642,normal,,RESPONSE,UNCONFIRMED,10.0.19.35,10.0.19.39,10.0.19.35:102-10.0.19.39:56631,,,,,,,,,Unconfirmed <RPT>
@@ -431,7 +431,7 @@ line_number,timestamp,tag,reasons,direction,service,src_ip,dst_ip,stream_id,invo
 430,2026-02-14T01:42:30.144082,normal,,REQUEST,GET_NAME_LIST,10.0.19.39,10.0.19.47,10.0.19.39:56633-10.0.19.47:102,126942.0,,,,,,,,GetServerDirectoryRequest
 431,2026-02-14T01:42:30.147985,normal,,RESPONSE,GET_NAME_LIST,10.0.19.47,10.0.19.39,10.0.19.39:56633-10.0.19.47:102,126942.0,,,,,,,,GET_NAME_LIST
 432,2026-02-14T01:42:30.367583,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
-433,2026-02-14T01:42:31.076149,likely-attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,1,Unconfirmed <RPT>
+433,2026-02-14T01:42:31.076149,attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,1,Unconfirmed <RPT>
 434,2026-02-14T01:42:32.900103,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 435,2026-02-14T01:42:33.426118,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 436,2026-02-14T01:42:35.914212,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
@@ -501,7 +501,7 @@ line_number,timestamp,tag,reasons,direction,service,src_ip,dst_ip,stream_id,invo
 500,2026-02-14T01:43:01.085163,normal,,REQUEST,GET_NAME_LIST,10.0.19.39,10.0.19.49,10.0.19.39:56638-10.0.19.49:102,161874.0,,,,,,,,GetServerDirectoryRequest
 501,2026-02-14T01:43:01.126154,normal,,RESPONSE,GET_NAME_LIST,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,161874.0,,,,,,,,GET_NAME_LIST
 502,2026-02-14T01:43:01.211883,failed-control,report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,SAT200: 10.0.19.39 Origin:128,SAT200: 10.0.19.39 Origin:128,116,Unconfirmed <RPT>
-503,2026-02-14T01:43:01.376800,likely-attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,2,Unconfirmed <RPT>
+503,2026-02-14T01:43:01.376800,attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,2,Unconfirmed <RPT>
 504,2026-02-14T01:43:01.386552,normal,,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,,,,Unconfirmed <RPT>
 505,2026-02-14T01:43:03.229322,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 506,2026-02-14T01:43:03.694361,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
@@ -919,7 +919,7 @@ line_number,timestamp,tag,reasons,direction,service,src_ip,dst_ip,stream_id,invo
 918,2026-02-14T01:46:06.714533,normal,,RESPONSE,GET_NAME_LIST,10.0.19.48,10.0.19.39,10.0.19.39:56634-10.0.19.48:102,128886.0,,,,,,,,GET_NAME_LIST
 919,2026-02-14T01:46:07.608896,normal,paired_sbow_oper,REQUEST,WRITE,10.0.19.39,10.0.19.49,10.0.19.39:56638-10.0.19.49:102,161893.0,E03A103_CTRL/Q0CSWI1$CO$Pos,SBOw,117,SAT200: 10.0.19.39 Origin:128,SAT200: 10.0.19.39 Origin:128,,,SetDataValueRequest
 920,2026-02-14T01:46:07.635248,normal,,RESPONSE,WRITE,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,161893.0,,,,,,,,WRITE
-921,2026-02-14T01:46:07.721916,likely-attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,2,Unconfirmed <RPT>
+921,2026-02-14T01:46:07.721916,attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,2,Unconfirmed <RPT>
 922,2026-02-14T01:46:07.777756,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 923,2026-02-14T01:46:08.394605,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 924,2026-02-14T01:46:09.469278,normal,,RESPONSE,UNCONFIRMED,10.0.19.35,10.0.19.39,10.0.19.35:102-10.0.19.39:56631,,,,,,,,,Unconfirmed <RPT>
@@ -1133,7 +1133,7 @@ line_number,timestamp,tag,reasons,direction,service,src_ip,dst_ip,stream_id,invo
 1132,2026-02-14T01:47:33.160139,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 1133,2026-02-14T01:47:34.914231,normal,paired_sbow_oper,REQUEST,WRITE,10.0.19.39,10.0.19.49,10.0.19.39:56638-10.0.19.49:102,161905.0,E03A103_CTRL/Q1CSWI1$CO$Pos,SBOw,120,SAT200: 10.0.19.39 Origin:128,SAT200: 10.0.19.39 Origin:128,,,SetDataValueRequest
 1134,2026-02-14T01:47:34.921063,normal,,RESPONSE,WRITE,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,161905.0,,,,,,,,WRITE
-1135,2026-02-14T01:47:34.951319,likely-attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_ctlnum_regression;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,1,Unconfirmed <RPT>
+1135,2026-02-14T01:47:34.951319,attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_ctlnum_regression;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,1,Unconfirmed <RPT>
 1136,2026-02-14T01:47:35.426676,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 1137,2026-02-14T01:47:36.177461,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 1138,2026-02-14T01:47:36.878741,normal,,REQUEST,GET_NAME_LIST,10.0.19.39,10.0.19.48,10.0.19.39:56634-10.0.19.48:102,128895.0,,,,,,,,GetServerDirectoryRequest
@@ -43102,7 +43102,7 @@ line_number,timestamp,tag,reasons,direction,service,src_ip,dst_ip,stream_id,invo
 43101,2026-02-14T07:07:33.555026,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 43102,2026-02-14T07:07:33.738512,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 43103,2026-02-14T07:07:34.700260,failed-control,report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,SAT200: 10.0.19.39 Origin:128,SAT200: 10.0.19.39 Origin:128,121,Unconfirmed <RPT>
-43104,2026-02-14T07:07:34.862275,likely-attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,3,Unconfirmed <RPT>
+43104,2026-02-14T07:07:34.862275,attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,3,Unconfirmed <RPT>
 43105,2026-02-14T07:07:34.866179,normal,,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,,,,Unconfirmed <RPT>
 43106,2026-02-14T07:07:34.987199,normal,,RESPONSE,UNCONFIRMED,10.0.19.35,10.0.19.39,10.0.19.35:102-10.0.19.39:56631,,,,,,,,,Unconfirmed <RPT>
 43107,2026-02-14T07:07:34.999887,normal,,RESPONSE,UNCONFIRMED,10.0.19.35,10.0.19.39,10.0.19.35:102-10.0.19.39:56631,,,,,,,,,Unconfirmed <RPT>
@@ -43134,8 +43134,8 @@ line_number,timestamp,tag,reasons,direction,service,src_ip,dst_ip,stream_id,invo
 43133,2026-02-14T07:07:45.637859,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 43134,2026-02-14T07:07:45.837938,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 43135,2026-02-14T07:07:45.999100,normal,,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,,,,Unconfirmed <RPT>
-43136,2026-02-14T07:07:46.499779,likely-attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,4,Unconfirmed <RPT>
-43137,2026-02-14T07:07:48.105763,likely-attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,4,Unconfirmed <RPT>
+43136,2026-02-14T07:07:46.499779,attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,4,Unconfirmed <RPT>
+43137,2026-02-14T07:07:48.105763,attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,4,Unconfirmed <RPT>
 43138,2026-02-14T07:07:48.654803,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 43139,2026-02-14T07:07:48.855857,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 43140,2026-02-14T07:07:49.633718,normal,,REQUEST,GET_NAME_LIST,10.0.19.39,10.0.19.37,10.0.19.37:102-10.0.19.39:61269,77403.0,,,,,,,,GetServerDirectoryRequest
@@ -56648,14 +56648,14 @@ line_number,timestamp,tag,reasons,direction,service,src_ip,dst_ip,stream_id,invo
 56647,2026-02-14T09:08:07.529741,normal,,RESPONSE,UNCONFIRMED,10.0.19.35,10.0.19.39,10.0.19.35:102-10.0.19.39:56631,,,,,,,,,Unconfirmed <RPT>
 56648,2026-02-14T09:08:07.540476,normal,,RESPONSE,UNCONFIRMED,10.0.19.35,10.0.19.39,10.0.19.35:102-10.0.19.39:56631,,,,,,,,,Unconfirmed <RPT>
 56649,2026-02-14T09:08:07.672310,normal,,RESPONSE,UNCONFIRMED,10.0.19.35,10.0.19.39,10.0.19.35:102-10.0.19.39:56631,,,,,,,,,Unconfirmed <RPT>
-56650,2026-02-14T09:08:07.849938,likely-attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,4,Unconfirmed <RPT>
+56650,2026-02-14T09:08:07.849938,attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,4,Unconfirmed <RPT>
 56651,2026-02-14T09:08:08.291083,normal,,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,,,,Unconfirmed <RPT>
 56652,2026-02-14T09:08:08.530753,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
-56653,2026-02-14T09:08:08.789403,likely-attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,6,Unconfirmed <RPT>
+56653,2026-02-14T09:08:08.789403,attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,6,Unconfirmed <RPT>
 56654,2026-02-14T09:08:09.433233,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 56655,2026-02-14T09:08:10.184743,normal,,REQUEST,GET_NAME_LIST,10.0.19.39,10.0.19.37,10.0.19.37:102-10.0.19.39:61269,78107.0,,,,,,,,GetServerDirectoryRequest
 56656,2026-02-14T09:08:10.189623,normal,,RESPONSE,GET_NAME_LIST,10.0.19.37,10.0.19.39,10.0.19.37:102-10.0.19.39:61269,78107.0,,,,,,,,GET_NAME_LIST
-56657,2026-02-14T09:08:10.393604,likely-attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,6,Unconfirmed <RPT>
+56657,2026-02-14T09:08:10.393604,attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,6,Unconfirmed <RPT>
 56658,2026-02-14T09:08:11.562914,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 56659,2026-02-14T09:08:12.467653,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 56660,2026-02-14T09:08:14.580548,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
@@ -56676,9 +56676,9 @@ line_number,timestamp,tag,reasons,direction,service,src_ip,dst_ip,stream_id,invo
 56675,2026-02-14T09:08:20.454147,normal,,RESPONSE,GET_NAME_LIST,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,164541.0,,,,,,,,GET_NAME_LIST
 56676,2026-02-14T09:08:20.632754,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 56677,2026-02-14T09:08:21.532613,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
-56678,2026-02-14T09:08:21.671203,likely-attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_ctlnum_regression;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,3,Unconfirmed <RPT>
+56678,2026-02-14T09:08:21.671203,attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_ctlnum_regression;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,3,Unconfirmed <RPT>
 56679,2026-02-14T09:08:21.810770,normal,,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,,,,Unconfirmed <RPT>
-56680,2026-02-14T09:08:21.872255,likely-attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,7,Unconfirmed <RPT>
+56680,2026-02-14T09:08:21.872255,attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,7,Unconfirmed <RPT>
 56681,2026-02-14T09:08:23.646600,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 56682,2026-02-14T09:08:24.583899,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 56683,2026-02-14T09:08:26.680176,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
@@ -74319,7 +74319,7 @@ line_number,timestamp,tag,reasons,direction,service,src_ip,dst_ip,stream_id,invo
 74318,2026-02-14T11:38:00.504626,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 74319,2026-02-14T11:38:00.626626,normal,paired_sbow_oper,REQUEST,WRITE,10.0.19.39,10.0.19.49,10.0.19.39:56638-10.0.19.49:102,165436.0,E03A103_CTRL/Q0CSWI1$CO$Pos,SBOw,130,SAT200: 10.0.19.39 Origin:128,SAT200: 10.0.19.39 Origin:128,,,SetDataValueRequest
 74320,2026-02-14T11:38:00.652976,normal,,RESPONSE,WRITE,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,165436.0,,,,,,,,WRITE
-74321,2026-02-14T11:38:00.654929,likely-attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,7,Unconfirmed <RPT>
+74321,2026-02-14T11:38:00.654929,attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,7,Unconfirmed <RPT>
 74322,2026-02-14T11:38:01.572091,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 74323,2026-02-14T11:38:03.539877,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 74324,2026-02-14T11:38:04.153652,normal,paired_sbow_oper,REQUEST,WRITE,10.0.19.39,10.0.19.49,10.0.19.39:56638-10.0.19.49:102,165437.0,E03A103_CTRL/Q0CSWI1$CO$Pos,Oper,130,SAT200: 10.0.19.39 Origin:128,SAT200: 10.0.19.39 Origin:128,,,SetDataValueRequest
@@ -74353,7 +74353,7 @@ line_number,timestamp,tag,reasons,direction,service,src_ip,dst_ip,stream_id,invo
 74352,2026-02-14T11:38:16.695433,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
 74353,2026-02-14T11:38:17.172689,normal,paired_sbow_oper,REQUEST,WRITE,10.0.19.39,10.0.19.49,10.0.19.39:56638-10.0.19.49:102,165439.0,E03A103_CTRL/Q1CSWI1$CO$Pos,SBOw,131,SAT200: 10.0.19.39 Origin:128,SAT200: 10.0.19.39 Origin:128,,,SetDataValueRequest
 74354,2026-02-14T11:38:17.179521,normal,,RESPONSE,WRITE,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,165439.0,,,,,,,,WRITE
-74355,2026-02-14T11:38:17.182449,likely-attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_ctlnum_regression;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,6,Unconfirmed <RPT>
+74355,2026-02-14T11:38:17.182449,attack,unexpected_octet_identity_in_control_context;report_origin_not_seen_in_writes;report_ctlnum_regression;report_without_matching_write,RESPONSE,UNCONFIRMED,10.0.19.49,10.0.19.39,10.0.19.39:56638-10.0.19.49:102,,,,,,IEDEXPLORER,IEDEXPLORER,6,Unconfirmed <RPT>
 74356,2026-02-14T11:38:17.829648,normal,,REQUEST,GET_NAME_LIST,10.0.19.39,10.0.19.47,10.0.19.39:56633-10.0.19.47:102,128744.0,,,,,,,,GetServerDirectoryRequest
 74357,2026-02-14T11:38:17.834528,normal,,RESPONSE,GET_NAME_LIST,10.0.19.47,10.0.19.39,10.0.19.39:56633-10.0.19.47:102,128744.0,,,,,,,,GET_NAME_LIST
 74358,2026-02-14T11:38:18.746661,normal,,RESPONSE,UNCONFIRMED,10.0.19.36,10.0.19.39,10.0.19.36:102-10.0.19.39:56635,,,,,,,,,Unconfirmed <RPT>
