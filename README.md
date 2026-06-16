@@ -19,8 +19,9 @@ This Git repository contains the baseline IDS implementation, reviewed labels, s
 - Baseline configuration files under `configs/`
 - A Git-safe sample dataset under `data/sample/`
 - Normalized full-corpus capture files under `data/raw/`:
-  - `mms_capture_normalized.csv.gz` — all 428,204 MMS records, flat+labeled (20 MB)
-  - `mms_capture_normalized.jsonl.gz` — same corpus in JSONL format (63 MB)
+  - `mms_capture_normalized.csv.gz` — all 428,204 MMS records, enriched flat schema with ground-truth `tag` label (52 MB)
+  - `mms_capture_normalized.jsonl.gz` — same corpus in JSONL format (58 MB)
+  - `mms_capture_attack_tags.csv` — attack-focused 21-column view; IEDEXPLORER-origin packets labeled `attack`
 - Supporting raw artifacts under `data/raw/`: attack tags, IDS alerts, analysis notes
 - Reviewed labels and scenario summaries under `data/labels/`
 - Expected output files under `results/expected_outputs/`
