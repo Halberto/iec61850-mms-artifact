@@ -1,7 +1,7 @@
 artifact_group,relative_path,size_bytes,size_mb,git_safe,recommended_publication
-raw_dataset,data/raw/mms_capture_normalized.csv.gz,20677114,19.73,yes,git-or-small-release-asset
-raw_dataset,data/raw/mms_capture_normalized.jsonl.gz,66470578,63.39,yes,git-or-small-release-asset
-raw_dataset,data/raw/attack_tags_full_capture.csv,62940023,60.02,yes,git-or-small-release-asset
+raw_dataset,data/raw/mms_capture_normalized.csv.gz,54073630,51.57,yes,git-or-small-release-asset
+raw_dataset,data/raw/mms_capture_normalized.jsonl.gz,60595725,57.79,yes,git-or-small-release-asset
+raw_dataset,data/raw/mms_capture_attack_tags.csv,64976009,61.97,yes,git-or-small-release-asset
 raw_dataset,data/raw/hybrid_ids_alerts_full_capture.csv,66986,0.06,yes,git-or-small-release-asset
 raw_dataset,data/raw/analysis.txt,6566957,6.26,yes,git-or-small-release-asset
 labeled_dataset,data/labels/mms_full_capture_supervised_labels.csv,43316063,41.31,yes,git-or-small-release-asset
