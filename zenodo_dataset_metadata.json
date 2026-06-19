@@ -1,7 +1,7 @@
 {
   "title": "Unauthorized MMS Supervisory Control in IEC 61850 Digital Substations: From Attack Scenarios to a Labeled Dataset",
   "description": "Dataset accompanying the ESORICS/CyberICPS 2026 paper 'Unauthorized MMS Supervisory Control in IEC 61850 Digital Substations: From Attack Scenarios to a Labeled Dataset'. Contains the normalized full-corpus MMS capture (428,204 records, gzip-compressed CSV and JSONL), reviewed ground-truth labels, scenario summaries, and a sample subset for lightweight validation.\n\nFiles included:\n- mms_capture_normalized.csv.gz — all 428,204 MMS records, flat schema, ground-truth labels merged in\n- mms_capture_normalized.jsonl.gz — same corpus in JSONL format\n- mms_full_capture_supervised_labels.csv — reviewed ground-truth labels (final_tag, seed_is_attack, supervised_is_anomaly, scenario_id, scenario_role)\n- mms_full_capture_scenario_summary.csv — per-scenario attack summary\n- mms_prepared_supervised_labels.csv / mms_prepared_scenario_summary.csv — prepared-subset equivalents\n- scenario_event_review.csv / scenario_review.csv — manual review records\n- mms_sample_100k.csv / mms_sample_100k.jsonl — 100k-record sample subset\n- mms_sample_attack_tags.csv / mms_ml_features_100k.csv / mms_sequence_windows.csv — derived sample assets\n\nThe companion software artifact (baseline IDS implementation, scripts, configs) is available separately on Zenodo.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "CC-BY-4.0",
   "upload_type": "dataset",
   "access_right": "open",
@@ -46,4 +46,5 @@
   "language": "eng",
   "communities": [
     {"identifier": "zenodo"}
- 
+  ]
+}
