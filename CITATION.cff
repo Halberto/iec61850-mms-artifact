@@ -2,9 +2,9 @@ cff-version: 1.2.0
 message: If you use this artifact, please cite the associated ESORICS paper and software release.
 title: Unauthorized MMS Supervisory Control in IEC 61850 Digital Substations: From Attack Scenarios to a Labeled Dataset
 type: software
-version: 0.1.0
+version: 0.1.1
 license: Apache-2.0
-date-released: 2026-04-21
+date-released: 2026-06-19
 repository-artifact: https://doi.org/10.5281/zenodo.20697139
 keywords:
   - IEC 61850
