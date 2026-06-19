@@ -16,6 +16,8 @@ RESULT_CONTEXT_COLUMNS = [
     "origin_identifier",
     "ctl_num",
     "report_seq_num",
+    "report_origins",
+    "report_ctl_nums",
 ]
 
 DEFAULT_POSITIVE_LABELS = {"1", "true", "yes", "attack", "anomaly", "malicious", "masquerade", "failed-control", "likely-attack"}
@@ -64,6 +66,16 @@ def parse_args() -> argparse.Namespace:
         "--fallback-to-heuristic-labels",
         action="store_true",
         help="Use the heuristic hybrid tag for rows that do not have a supervised label.",
+    )
+    parser.add_argument(
+        "--use-report-side-control",
+        action="store_true",
+        help=(
+            "Surface report-side control identity into the origin/ctlNum features: when the "
+            "request-side originIdentifier/ctlNum are absent (e.g. on Information Reports), fall "
+            "back to the detector's report_origins/report_ctl_nums. Off by default, which keeps "
+            "the origin/ctlNum features request-side only. Toggle this for the report-side ablation."
+        ),
     )
     return parser.parse_args()
 
@@ -286,13 +298,28 @@ def extract_features(args: argparse.Namespace) -> None:
     parsed_test_flag = control_payloads.apply(lambda payload: get_nested_value(payload, ("test", "value")))
     parsed_check_bits = control_payloads.apply(lambda payload: get_nested_value(payload, ("check", "value"), ""))
 
+    # Report-side fallback: Information Reports carry their originator/ctlNum in
+    # report_origins/report_ctl_nums (the detector already emits these), not in the
+    # request-side originIdentifier/ctlNum. ';'-joined multi-entry values -> take the first.
+    if args.use_report_side_control:
+        report_origin_fallback = (
+            df.get("report_origins", pd.Series("", index=df.index)).fillna("").astype(str).str.split(";").str[0]
+        )
+        report_ctl_fallback = numeric_series(
+            df.get("report_ctl_nums", pd.Series("", index=df.index)).fillna("").astype(str).str.split(";").str[0]
+        )
+    else:
+        report_origin_fallback = pd.Series("", index=df.index)
+        report_ctl_fallback = pd.Series(np.nan, index=df.index)
+
     df["origin_identifier_value"] = fill_text_from_sources(
         df.get("origin_identifier", pd.Series("", index=df.index)),
         parsed_origin_identifier,
+        report_origin_fallback,
     )
     df["ctl_num_value"] = numeric_series(
         df.get("ctl_num", pd.Series(np.nan, index=df.index))
-    ).fillna(numeric_series(parsed_ctl_num))
+    ).fillna(numeric_series(parsed_ctl_num)).fillna(report_ctl_fallback)
     df["report_seq_num_value"] = numeric_series(
         df.get("report_seq_num", pd.Series(np.nan, index=df.index))
     )
@@ -577,11 +604,27 @@ def extract_features(args: argparse.Namespace) -> None:
     else:
         df["is_anomaly"] = df["heuristic_is_anomaly"]
 
+    # Carry augmentation provenance through as metadata (never used as a training
+    # feature; see DEFAULT_METADATA_COLUMNS in train_fusion_ml.py). Synthetic rows
+    # are produced by src/pipeline/augment_attack_windows.py.
+    for provenance_column, default_value in (
+        ("event_source", "packet"),
+        ("gen_rule", ""),
+        ("synthetic_seed_line", ""),
+    ):
+        if provenance_column not in df.columns:
+            df[provenance_column] = default_value
+        else:
+            df[provenance_column] = df[provenance_column].fillna(default_value)
+
     ml_features = [
         "line_number",
         "event_timestamp",
         "event_time_unix",
         "time_bucket_15m",
+        "event_source",
+        "gen_rule",
+        "synthetic_seed_line",
         "scenario_id",
         "scenario_role",
         "scenario_seed_count",
@@ -688,6 +731,9 @@ def extract_features(args: argparse.Namespace) -> None:
     non_numeric_columns = {
         "event_timestamp",
         "time_bucket_15m",
+        "event_source",
+        "gen_rule",
+        "synthetic_seed_line",
         "scenario_id",
         "scenario_role",
         "scenario_group_key",

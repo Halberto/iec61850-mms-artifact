@@ -1,0 +1,95 @@
+{
+  "inputs": {
+    "alerts_csv": "data\\raw\\hybrid_ids_alerts_full_capture.csv",
+    "attack_tags_csv": "data\\raw\\mms_capture_attack_tags.csv",
+    "labels_csv": "data\\labels\\mms_full_capture_supervised_labels.csv"
+  },
+  "ground_truth": {
+    "attack_packets": 105,
+    "attack_direction_counts": {
+      "RESPONSE": 105
+    },
+    "attack_service_counts": {
+      "UNCONFIRMED": 105
+    },
+    "attack_write_requests": 0,
+    "scenario_core_rows": 192,
+    "scenario_window_rows": 1312
+  },
+  "families": {
+    "request": {
+      "family": "request",
+      "alert_rows": 10,
+      "attacks_detected": 0,
+      "attacks_total": 105,
+      "recall_narrow": 0.0,
+      "alerts_in_clean_traffic": 0,
+      "precision_narrow": 0.0,
+      "precision_vs_window": 1.0,
+      "precision_vs_core": 0.0
+    },
+    "report": {
+      "family": "report",
+      "alert_rows": 175,
+      "attacks_detected": 101,
+      "attacks_total": 105,
+      "recall_narrow": 0.9619047619047619,
+      "alerts_in_clean_traffic": 0,
+      "precision_narrow": 0.5771428571428572,
+      "precision_vs_window": 1.0,
+      "precision_vs_core": 1.0
+    },
+    "combined": {
+      "family": "combined",
+      "alert_rows": 185,
+      "attacks_detected": 101,
+      "attacks_total": 105,
+      "recall_narrow": 0.9619047619047619,
+      "alerts_in_clean_traffic": 0,
+      "precision_narrow": 0.5459459459459459,
+      "precision_vs_window": 1.0,
+      "precision_vs_core": 0.9459459459459459
+    }
+  },
+  "per_rule_recall": [
+    {
+      "reason": "report_origin_not_seen_in_writes",
+      "family": "report",
+      "attacks_fired_on": 101
+    },
+    {
+      "reason": "report_without_matching_write",
+      "family": "report",
+      "attacks_fired_on": 101
+    },
+    {
+      "reason": "unexpected_octet_identity_in_control_context",
+      "family": "report",
+      "attacks_fired_on": 101
+    },
+    {
+      "reason": "report_ctlnum_regression",
+      "family": "report",
+      "attacks_fired_on": 70
+    }
+  ],
+  "report_side_misses": [
+    422,
+    433,
+    503,
+    165404
+  ],
+  "report_side_miss_classification": {
+    "warmup": [
+      422,
+      433,
+      503
+    ],
+    "deduplicated": [
+      165404
+    ],
+    "unexplained": []
+  },
+  "warmup_train_end": "2026-02-14T01:44:34.309070",
+  "unclassified_reasons": {}
+}

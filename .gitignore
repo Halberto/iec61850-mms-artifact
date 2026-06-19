@@ -10,3 +10,6 @@ __pycache__/
 # Large sample files distributed as release assets, not committed to Git
 data/sample/mms_sample_100k.csv
 data/sample/mms_sample_100k.jsonl
+
+# Reviewed-out dead code/artifacts staged for deletion, not part of the repo
+_unused_for_removal/

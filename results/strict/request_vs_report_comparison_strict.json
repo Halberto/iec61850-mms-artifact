@@ -1,0 +1,84 @@
+{
+  "inputs": {
+    "alerts_csv": "results\\strict\\hybrid_ids_alerts_full_capture_strict.csv",
+    "attack_tags_csv": "data\\raw\\mms_capture_attack_tags.csv",
+    "labels_csv": "data\\labels\\mms_full_capture_supervised_labels.csv"
+  },
+  "ground_truth": {
+    "attack_packets": 105,
+    "attack_direction_counts": {
+      "RESPONSE": 105
+    },
+    "attack_service_counts": {
+      "UNCONFIRMED": 105
+    },
+    "attack_write_requests": 0,
+    "scenario_core_rows": 192,
+    "scenario_window_rows": 1312
+  },
+  "families": {
+    "request": {
+      "family": "request",
+      "alert_rows": 0,
+      "attacks_detected": 0,
+      "attacks_total": 105,
+      "recall_narrow": 0.0,
+      "alerts_in_clean_traffic": 0,
+      "precision_narrow": null,
+      "precision_vs_window": null,
+      "precision_vs_core": null
+    },
+    "report": {
+      "family": "report",
+      "alert_rows": 376,
+      "attacks_detected": 105,
+      "attacks_total": 105,
+      "recall_narrow": 1.0,
+      "alerts_in_clean_traffic": 1,
+      "precision_narrow": 0.27925531914893614,
+      "precision_vs_window": 0.9973404255319149,
+      "precision_vs_core": 0.5
+    },
+    "combined": {
+      "family": "combined",
+      "alert_rows": 376,
+      "attacks_detected": 105,
+      "attacks_total": 105,
+      "recall_narrow": 1.0,
+      "alerts_in_clean_traffic": 1,
+      "precision_narrow": 0.27925531914893614,
+      "precision_vs_window": 0.9973404255319149,
+      "precision_vs_core": 0.5
+    }
+  },
+  "per_rule_recall": [
+    {
+      "reason": "report_origin_not_seen_in_writes",
+      "family": "report",
+      "attacks_fired_on": 105
+    },
+    {
+      "reason": "report_without_matching_write",
+      "family": "report",
+      "attacks_fired_on": 105
+    },
+    {
+      "reason": "unexpected_octet_identity_in_control_context",
+      "family": "report",
+      "attacks_fired_on": 105
+    },
+    {
+      "reason": "report_ctlnum_regression",
+      "family": "report",
+      "attacks_fired_on": 70
+    }
+  ],
+  "report_side_misses": [],
+  "report_side_miss_classification": {
+    "warmup": [],
+    "deduplicated": [],
+    "unexplained": []
+  },
+  "warmup_train_end": "2026-02-14T01:44:34.309070",
+  "unclassified_reasons": {}
+}

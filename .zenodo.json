@@ -1,6 +1,6 @@
 {
-  "title": "From MMS Command Misuse to Process Disruption — Software Artifact (Baseline IDS, Scripts, Configs)",
-  "description": "Software artifact accompanying the ESORICS paper 'From MMS Command Misuse to Process Disruption: Threat Modeling and Experimental Analysis in IEC 61850 Digital Substations'. Contains the baseline hybrid IDS implementation (deterministic + ML fusion), feature generation and sequence-window construction, evaluation and reporting scripts, baseline configuration files, and reproduction documentation. The companion dataset record (normalized MMS corpus, ground-truth labels, sample data) is available at https://doi.org/10.5281/zenodo.20696377.",
+  "title": "Unauthorized MMS Supervisory Control in IEC 61850 Digital Substations — Software Artifact (Baseline IDS, Scripts, Configs)",
+  "description": "Software artifact accompanying the ESORICS/CyberICPS 2026 paper 'Unauthorized MMS Supervisory Control in IEC 61850 Digital Substations: From Attack Scenarios to a Labeled Dataset'. Contains the baseline hybrid IDS implementation (deterministic + ML fusion), feature generation and sequence-window construction, evaluation and reporting scripts, baseline configuration files, and reproduction documentation. The companion dataset record (normalized MMS corpus, ground-truth labels, sample data) is available at https://doi.org/10.5281/zenodo.20696376.",
   "version": "0.1.0",
   "license": "Apache-2.0",
   "upload_type": "software",
@@ -44,6 +44,4 @@
   ],
   "language": "eng",
   "communities": [
-    {"identifier": "zenodo"}
-  ]
-}
+    {"i

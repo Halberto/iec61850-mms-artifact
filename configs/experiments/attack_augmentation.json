@@ -1,0 +1,8 @@
+{
+  "description": "Generative attack-augmentation config. The model in src/augmentation/attack_model.py is fit by profile_attacks.py on the 105 real IEDExplorer attack packets and sampled by generate_attacks.py to extend the captured corpus to a target attack ratio. Synthetic packets reuse only real, observed field values (no invented protocol values) and are always flagged event_source=synthetic.",
+  "random_seed": 20260616,
+  "target_attack_ratio": 0.40,
+  "normal_subsample": null,
+  "_normal_subsample_help": "null = keep ALL real normals and oversample synthetic attacks to reach target_attack_ratio (extend the full ~428k-row capture). Set to an integer (e.g. 60000) to instead build a compact balanced training corpus of that many normals.",
+  "_target_attack_ratio_help": "Attack share of the extended corpus, attack/(attack+normal). 0.40 => 40/60 attack/normal."
+}
