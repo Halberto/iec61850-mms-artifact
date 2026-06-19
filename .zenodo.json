@@ -44,4 +44,6 @@
   ],
   "language": "eng",
   "communities": [
-    {"i
+    {"identifier": "zenodo"}
+  ]
+}
