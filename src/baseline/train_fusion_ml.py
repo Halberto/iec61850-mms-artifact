@@ -21,7 +21,16 @@ from sklearn.metrics import (
 
 DEFAULT_EXPERT_COLUMNS = ("protocol_score", "stat_score")
 DEFAULT_IDENTITY_COLUMNS = ("src_ip_cat", "dst_ip_cat", "stream_id_cat")
-DEFAULT_METADATA_COLUMNS = ("line_number", "event_timestamp", "event_time_unix", "time_bucket_15m")
+DEFAULT_METADATA_COLUMNS = (
+    "line_number",
+    "event_timestamp",
+    "event_time_unix",
+    "time_bucket_15m",
+    "event_source",
+    "gen_rule",
+    "synthetic_seed_line",
+)
+SYNTHETIC_SOURCE_VALUE = "synthetic"
 DEFAULT_SCENARIO_COLUMNS = (
     "scenario_id",
     "scenario_role",
@@ -109,6 +118,18 @@ def parse_args() -> argparse.Namespace:
         "--extra-drop-columns",
         default="",
         help="Additional comma-separated feature columns to exclude from training.",
+    )
+    parser.add_argument(
+        "--synthetic-policy",
+        choices=("exclude", "train-only", "include-all"),
+        default="exclude",
+        help=(
+            "How to treat augmented rows (event_source == 'synthetic'). "
+            "'exclude' drops them entirely (default, reproduces non-augmented runs); "
+            "'train-only' computes the split on real rows and routes synthetic rows "
+            "exclusively into the training fold, keeping validation/test real-only; "
+            "'include-all' treats synthetic rows like real rows."
+        ),
     )
     return parser.parse_args()
 
@@ -505,6 +526,33 @@ def train_fusion_model(args: argparse.Namespace) -> None:
     X = sanitize_numeric_frame(df[feature_columns])
     y = df[resolved_label_column]
 
+    # Handle augmented (synthetic) rows per policy. 'train-only' computes the
+    # split on real rows only and later appends synthetic rows to the training
+    # fold, so validation/test stay real-only and reported metrics stay honest.
+    if "event_source" in df.columns:
+        is_synthetic = df["event_source"].astype(str).str.strip().eq(SYNTHETIC_SOURCE_VALUE)
+    else:
+        is_synthetic = pd.Series(False, index=df.index)
+    synthetic_count = int(is_synthetic.sum())
+    X_synthetic: pd.DataFrame | None = None
+    y_synthetic: pd.Series | None = None
+    if args.synthetic_policy in ("exclude", "train-only") and synthetic_count:
+        if args.synthetic_policy == "train-only":
+            X_synthetic = X.loc[is_synthetic].reset_index(drop=True)
+            y_synthetic = y.loc[is_synthetic].reset_index(drop=True)
+        keep_mask = ~is_synthetic
+        df = df.loc[keep_mask].reset_index(drop=True)
+        X = X.loc[keep_mask].reset_index(drop=True)
+        y = y.loc[keep_mask].reset_index(drop=True)
+        # The train/val/test split below is computed on this real-only frame, so
+        # synthetic rows cannot leak into validation or test by construction.
+        assert not df["event_source"].astype(str).str.strip().eq(SYNTHETIC_SOURCE_VALUE).any(), (
+            "Real-only split frame still contains synthetic rows."
+        )
+    print(f"Synthetic policy: {args.synthetic_policy} ({synthetic_count} synthetic rows present)")
+    if args.synthetic_policy == "train-only" and synthetic_count:
+        print("Validation/test folds are real-only; synthetic rows enter the training fold only.")
+
     print(f"Dataset shape: {X.shape}")
     print(f"Resolved label column: {resolved_label_column}")
     print(f"Positive rows: {int(y.sum())} ({y.mean() * 100:.4f}%)")
@@ -613,6 +661,18 @@ def train_fusion_model(args: argparse.Namespace) -> None:
             "test_rows": int(len(test_idx)),
         }
         print("Training Random Forest with chronological train/validation/test splits...")
+
+    if X_synthetic is not None and len(X_synthetic):
+        X_train = pd.concat([X_train, X_synthetic], ignore_index=True)
+        y_train = pd.concat([y_train, y_synthetic], ignore_index=True)
+        X_train_full = pd.concat([X_train_full, X_synthetic], ignore_index=True)
+        y_train_full = pd.concat([y_train_full, y_synthetic], ignore_index=True)
+        split_summary["synthetic_train_rows"] = int(len(X_synthetic))
+        print(
+            f"train-only policy: appended {len(X_synthetic)} synthetic rows to the "
+            "training fold (validation/test remain real-only)."
+        )
+
     clf = RandomForestClassifier(
         n_estimators=args.n_estimators,
         max_depth=args.max_depth,

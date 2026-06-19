@@ -1,0 +1,245 @@
+MMS Fusion ML Evaluation
+========================
+
+Dataset: results/ablation/features_request_side.csv
+Label column: supervised_is_anomaly
+Rows: 99291
+Positive rows: 258 (0.2598%)
+Split mode: group
+Threshold objective: row_f1
+Training features: hour_of_day, day_of_week, is_off_hours, service_cat, pdu_type_cat, origin_identifier_cat, control_object_cat, control_action_cat, invoke_id_cat, actor_id_cat, source_origin_pair_cat, actor_object_pair_cat, actor_action_pair_cat, object_action_pair_cat, prev_service_cat, service_transition_cat, prev_action_same_object_cat, action_transition_cat, prev_actor_same_object_cat, is_request, is_response, is_control_event, is_write_service, is_report_event, has_origin_identifier, has_control_object, has_control_action, has_invoke_id, has_ctl_num, has_report_seq_num, control_test_flag, source_origin_consistent, origin_seen_with_new_src, source_seen_with_new_origin, object_seen_from_new_actor, action_seen_from_new_actor, actor_changed_for_object, invoke_id_reused_stream, ctl_num_reused_actor_object, ctl_num_regression_actor_object, report_seq_reused_stream, report_seq_regression_stream, stream_event_index, time_since_last_stream_event, time_since_last_actor_object, time_since_last_object_control, time_since_last_origin_source, actor_prior_count, src_ip_prior_count, origin_prior_count, source_origin_prior_count, object_prior_count, action_prior_count, actor_object_prior_count, actor_action_prior_count, object_action_prior_count, origin_object_prior_count, actor_object_action_prior_count, object_unique_actor_count_prior, origin_unique_src_count_prior, invoke_id_value, invoke_id_delta_stream, ctl_num_val, ctl_num_delta_stream, ctl_num_delta_actor_object, report_seq_num_val, report_seq_delta_stream, origin_category_value, check_bits_length, time_delta, payload_size, payload_size_delta, time_z_score, actor_object_legitimacy_ratio, actor_action_legitimacy_ratio, origin_object_legitimacy_ratio, actor_object_action_ratio
+Excluded columns: dst_ip_cat, event_source, event_time_unix, event_timestamp, gen_rule, heuristic_is_anomaly, is_anomaly, line_number, protocol_score, scenario_core_end_line, scenario_core_start_line, scenario_duration_seconds, scenario_end_timestamp, scenario_group_key, scenario_id, scenario_member_count, scenario_role, scenario_seed_count, scenario_start_timestamp, scenario_window_end_line, scenario_window_start_line, seed_is_attack, src_ip_cat, stat_score, stream_id_cat, supervised_is_anomaly, synthetic_seed_line, time_bucket_15m
+Expert features included: False
+Identity features included: False
+Split summary: {"group_columns": ["src_ip_cat", "dst_ip_cat"], "unique_groups": 10, "positive_groups": 6}
+
+Leakage note:
+protocol_score/stat_score are excluded by default because they may encode the same upstream hybrid detector that produced the target.
+
+Validation metrics:
+{
+  "threshold": 0.8756511657140209,
+  "positive_rows": 5,
+  "predicted_positive_rows": 2,
+  "f1": 0.5714285714285714,
+  "balanced_accuracy": 0.7,
+  "average_precision": 0.4099075949227007,
+  "confusion_matrix": [
+    [
+      6662,
+      0
+    ],
+    [
+      3,
+      2
+    ]
+  ],
+  "roc_auc": 0.9782647853497448,
+  "scenario_metrics": {
+    "group_label": "scenario",
+    "positive_scenarios": 1,
+    "predicted_positive_scenarios": 1,
+    "scenario_f1": 1.0,
+    "scenario_balanced_accuracy": 1.0,
+    "scenario_confusion_matrix": [
+      [
+        55,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "scenario_classification_report": "              precision    recall  f1-score   support\n\n           0       1.00      1.00      1.00        55\n           1       1.00      1.00      1.00         1\n\n    accuracy                           1.00        56\n   macro avg       1.00      1.00      1.00        56\nweighted avg       1.00      1.00      1.00        56\n",
+    "scenario_roc_auc": 1.0,
+    "scenario_average_precision": 1.0
+  }
+}
+
+Validation classification report:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00      6662
+           1       1.00      0.40      0.57         5
+
+    accuracy                           1.00      6667
+   macro avg       1.00      0.70      0.79      6667
+weighted avg       1.00      1.00      1.00      6667
+
+
+Validation scenario metrics:
+{
+  "group_label": "scenario",
+  "positive_scenarios": 1,
+  "predicted_positive_scenarios": 1,
+  "scenario_f1": 1.0,
+  "scenario_balanced_accuracy": 1.0,
+  "scenario_confusion_matrix": [
+    [
+      55,
+      0
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "scenario_classification_report": "              precision    recall  f1-score   support\n\n           0       1.00      1.00      1.00        55\n           1       1.00      1.00      1.00         1\n\n    accuracy                           1.00        56\n   macro avg       1.00      1.00      1.00        56\nweighted avg       1.00      1.00      1.00        56\n",
+  "scenario_roc_auc": 1.0,
+  "scenario_average_precision": 1.0
+}
+
+Test metrics:
+{
+  "threshold": 0.8756511657140209,
+  "positive_rows": 24,
+  "predicted_positive_rows": 16,
+  "f1": 0.8,
+  "balanced_accuracy": 0.8333333333333333,
+  "average_precision": 0.8402470932849441,
+  "confusion_matrix": [
+    [
+      34750,
+      0
+    ],
+    [
+      8,
+      16
+    ]
+  ],
+  "roc_auc": 0.995888489208633,
+  "scenario_metrics": {
+    "group_label": "scenario",
+    "positive_scenarios": 2,
+    "predicted_positive_scenarios": 2,
+    "scenario_f1": 1.0,
+    "scenario_balanced_accuracy": 1.0,
+    "scenario_confusion_matrix": [
+      [
+        55,
+        0
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "scenario_classification_report": "              precision    recall  f1-score   support\n\n           0       1.00      1.00      1.00        55\n           1       1.00      1.00      1.00         2\n\n    accuracy                           1.00        57\n   macro avg       1.00      1.00      1.00        57\nweighted avg       1.00      1.00      1.00        57\n",
+    "scenario_roc_auc": 1.0,
+    "scenario_average_precision": 1.0
+  }
+}
+
+Test classification report:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     34750
+           1       1.00      0.67      0.80        24
+
+    accuracy                           1.00     34774
+   macro avg       1.00      0.83      0.90     34774
+weighted avg       1.00      1.00      1.00     34774
+
+
+Test scenario metrics:
+{
+  "group_label": "scenario",
+  "positive_scenarios": 2,
+  "predicted_positive_scenarios": 2,
+  "scenario_f1": 1.0,
+  "scenario_balanced_accuracy": 1.0,
+  "scenario_confusion_matrix": [
+    [
+      55,
+      0
+    ],
+    [
+      0,
+      2
+    ]
+  ],
+  "scenario_classification_report": "              precision    recall  f1-score   support\n\n           0       1.00      1.00      1.00        55\n           1       1.00      1.00      1.00         2\n\n    accuracy                           1.00        57\n   macro avg       1.00      1.00      1.00        57\nweighted avg       1.00      1.00      1.00        57\n",
+  "scenario_roc_auc": 1.0,
+  "scenario_average_precision": 1.0
+}
+
+Feature importances:
+                        feature   importance
+         source_origin_pair_cat 1.168448e-01
+                   actor_id_cat 1.063667e-01
+              actor_prior_count 8.164152e-02
+       report_seq_reused_stream 6.813895e-02
+             stream_event_index 6.488957e-02
+             src_ip_prior_count 6.138024e-02
+                   payload_size 5.456862e-02
+         service_transition_cat 5.194370e-02
+               prev_service_cat 4.447448e-02
+                invoke_id_value 4.431856e-02
+                  invoke_id_cat 4.328896e-02
+                    service_cat 3.535076e-02
+                    hour_of_day 3.410629e-02
+                   time_z_score 2.705745e-02
+        report_seq_delta_stream 1.880338e-02
+   time_since_last_stream_event 1.750221e-02
+                     time_delta 1.699681e-02
+             payload_size_delta 1.617472e-02
+               is_write_service 1.471550e-02
+         invoke_id_delta_stream 1.258852e-02
+                   pdu_type_cat 1.025414e-02
+                   is_off_hours 9.887971e-03
+                  has_invoke_id 6.877145e-03
+           ctl_num_delta_stream 5.518878e-03
+                is_report_event 4.921598e-03
+             report_seq_num_val 4.532369e-03
+             has_report_seq_num 3.570594e-03
+        invoke_id_reused_stream 3.014776e-03
+       source_origin_consistent 2.102788e-03
+                    is_response 1.868021e-03
+                     is_request 1.839578e-03
+     prev_actor_same_object_cat 1.481842e-03
+             control_object_cat 1.045385e-03
+          actor_object_pair_cat 9.930605e-04
+          has_origin_identifier 9.666468e-04
+    prev_action_same_object_cat 9.621078e-04
+          actor_action_pair_cat 7.984928e-04
+         object_action_pair_cat 7.974625e-04
+                    ctl_num_val 7.450430e-04
+                    has_ctl_num 6.605863e-04
+          origin_identifier_cat 5.543642e-04
+             has_control_action 5.403896e-04
+             origin_prior_count 5.145568e-04
+             control_action_cat 5.052132e-04
+  origin_unique_src_count_prior 4.486339e-04
+ origin_object_legitimacy_ratio 4.475550e-04
+  actor_object_legitimacy_ratio 4.391542e-04
+             object_prior_count 4.008853e-04
+               is_control_event 3.978264e-04
+          action_transition_cat 3.697909e-04
+             action_prior_count 2.804441e-04
+       actor_action_prior_count 2.675425e-04
+      source_origin_prior_count 1.131610e-04
+      actor_object_action_ratio 1.109119e-04
+  time_since_last_origin_source 1.099657e-04
+   time_since_last_actor_object 9.941978e-05
+             has_control_object 9.505983e-05
+actor_object_action_prior_count 9.206197e-05
+       actor_object_prior_count 5.455164e-05
+object_unique_actor_count_prior 4.807439e-05
+  actor_action_legitimacy_ratio 3.809737e-05
+   report_seq_regression_stream 3.024925e-05
+ time_since_last_object_control 2.920483e-05
+      object_action_prior_count 2.268758e-05
+     ctl_num_delta_actor_object 1.792417e-17
+    ctl_num_reused_actor_object 1.731330e-17
+      origin_object_prior_count 1.053464e-17
+                    day_of_week 0.000000e+00
+     action_seen_from_new_actor 0.000000e+00
+ctl_num_regression_actor_object 0.000000e+00
+     object_seen_from_new_actor 0.000000e+00
+              control_test_flag 0.000000e+00
+       origin_seen_with_new_src 0.000000e+00
+    source_seen_with_new_origin 0.000000e+00
+       actor_changed_for_object 0.000000e+00
+              check_bits_length 0.000000e+00
+          origin_category_value 0.000000e+00

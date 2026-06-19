@@ -1,6 +1,7 @@
 ﻿#!/usr/bin/env python3
 import argparse
 import csv
+import gzip
 import json
 import math
 import sys
@@ -119,7 +120,37 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-rows", type=int, default=0)
     parser.add_argument("--include-training-phase", action="store_true")
     parser.add_argument("--emit-all", action="store_true")
+    parser.add_argument(
+        "--load-baseline-json",
+        default="",
+        help=(
+            "Path to a pre-existing baseline JSON to use instead of re-training. "
+            "The statistical model and known_origins are loaded from this file; "
+            "the training phase is skipped entirely. Useful for strict invariant mode "
+            "when the warm-up window contains no control WRITEs."
+        ),
+    )
+    parser.add_argument(
+        "--strict-deterministic-invariants",
+        action="store_true",
+        help=(
+            "Treat the trained control baseline (authorized origins + ctlNum sets) as "
+            "provisioned invariants rather than online-learned state. Implies "
+            "--use-training-control-baseline, and additionally: (1) evaluates the "
+            "protocol/deterministic rules from the first packet (no warm-up gate for "
+            "hard violations), and (2) never suppresses hard-rule likely-attack alerts, "
+            "since each is a distinct protocol violation rather than statistical noise. "
+            "The statistical branch is unaffected and still uses the warm-up window."
+        ),
+    )
     return parser.parse_args()
+
+
+def open_input(path: Path):
+    """Open a capture CSV for reading, transparently handling .gz inputs."""
+    if str(path).endswith(".gz"):
+        return gzip.open(path, "rt", encoding="utf-8", newline="")
+    return path.open("r", encoding="utf-8", newline="")
 
 
 def parse_iso(ts: str) -> Optional[datetime]:
@@ -343,7 +374,7 @@ def train_baseline(input_csv: Path, args: argparse.Namespace) -> Dict[str, Any]:
     train_end_dt: Optional[datetime] = None
     trained_rows = 0
 
-    with input_csv.open("r", encoding="utf-8", newline="") as f:
+    with open_input(input_csv) as f:
         reader = csv.DictReader(f)
         for _, row in enumerate(reader, start=1):
             ts_raw = row.get("wtimestamp") or row.get("timestamp") or ""
@@ -520,13 +551,16 @@ def compute_statistical_score(
 def detect_with_hybrid_ids(
     input_csv: Path, output_csv: Path, model: Dict[str, Any], args: argparse.Namespace
 ) -> Dict[str, int]:
+    # Strict invariant mode provisions the control baseline from the trained model
+    # (it implies --use-training-control-baseline) instead of learning it online.
+    provision_baseline = args.use_training_control_baseline or args.strict_deterministic_invariants
     trained_known_origins = set(model.get("known_origins", []))
     trained_write_ctlnums = {k: set(v) for k, v in model.get("write_ctlnums_by_origin", {}).items()}
-    active_known_origins = set(trained_known_origins) if args.use_training_control_baseline else set()
+    active_known_origins = set(trained_known_origins) if provision_baseline else set()
     active_write_ctlnums: Dict[str, set[int]] = defaultdict(set)
-    if args.use_training_control_baseline:
+    if provision_baseline:
         active_write_ctlnums.update(trained_write_ctlnums)
-    active_allowed_origin = model.get("allowed_origin") if args.use_training_control_baseline else None
+    active_allowed_origin = model.get("allowed_origin") if provision_baseline else None
     active_write_origin_counts: Counter[str] = Counter()
     if isinstance(active_allowed_origin, str) and active_allowed_origin:
         active_write_origin_counts[active_allowed_origin] = 1
@@ -556,7 +590,7 @@ def detect_with_hybrid_ids(
         "protocol_score", "stat_score", "anomaly_score", "final_tag", "suppressed", "summary",
     ]
 
-    with input_csv.open("r", encoding="utf-8", newline="") as in_f, output_csv.open("w", encoding="utf-8", newline="") as out_f:
+    with open_input(input_csv) as in_f, output_csv.open("w", encoding="utf-8", newline="") as out_f:
         reader = csv.DictReader(in_f)
         writer = csv.DictWriter(out_f, fieldnames=out_columns)
         writer.writeheader()
@@ -901,7 +935,11 @@ def detect_with_hybrid_ids(
 
             if not detection_enabled:
                 totals["training_phase_rows"] += 1
-                continue
+                # In strict invariant mode, a hard deterministic violation is a real
+                # protocol fault regardless of warm-up: emit it. Statistical-only
+                # signals still require the warm-up baseline and stay suppressed here.
+                if not (args.strict_deterministic_invariants and protocol_tag == "likely-attack"):
+                    continue
 
             all_reasons = sorted(set(protocol_reasons + stat_reasons))
             report_origins = sorted({str(entry["origin_identifier"]) for entry in report_entries if entry.get("origin_identifier")})
@@ -919,8 +957,12 @@ def detect_with_hybrid_ids(
                 report_boolean_values=report_boolean_values,
             )
 
+            # Hard deterministic violations (protocol_tag == likely-attack) are distinct
+            # protocol events, not repetitive statistical noise: in strict invariant mode
+            # they bypass time-based de-duplication so every violating packet is recorded.
+            bypass_suppression = args.strict_deterministic_invariants and protocol_tag == "likely-attack"
             suppressed = False
-            if final_tag != "normal" and dt is not None and args.suppress_sec > 0:
+            if final_tag != "normal" and dt is not None and args.suppress_sec > 0 and not bypass_suppression:
                 last_sent = suppression_last_sent.get(fingerprint)
                 if last_sent is not None and (dt - last_sent).total_seconds() < args.suppress_sec:
                     suppressed = True
@@ -1040,18 +1082,27 @@ def main() -> None:
     output_csv = Path(args.output_csv)
     baseline_json = Path(args.baseline_json)
 
-    print(f"[phase-1/2] training baseline from: {input_csv}")
-    model = train_baseline(input_csv, args)
-    baseline_json.parent.mkdir(parents=True, exist_ok=True)
-    baseline_json.write_text(json.dumps(model, indent=2), encoding="utf-8")
+    if args.load_baseline_json:
+        load_path = Path(args.load_baseline_json)
+        print(f"[phase-1/2] loading pre-built baseline from: {load_path}")
+        model = json.loads(load_path.read_text(encoding="utf-8"))
+    else:
+        print(f"[phase-1/2] training baseline from: {input_csv}")
+        model = train_baseline(input_csv, args)
+        baseline_json.parent.mkdir(parents=True, exist_ok=True)
+        baseline_json.write_text(json.dumps(model, indent=2), encoding="utf-8")
 
     print(f"[baseline] trained_rows={model.get('trained_rows', 0)}")
     print(f"[baseline] train_start={model.get('train_start', '')}")
     print(f"[baseline] train_end={model.get('train_end', '')}")
     print(f"[baseline] known_origins={len(model.get('known_origins', []))}")
     print(f"[baseline] channels={len(model.get('interarrival_stats', {}))}")
-    print(f"[baseline] saved={baseline_json}")
+    if not args.load_baseline_json:
+        print(f"[baseline] saved={baseline_json}")
 
+    if args.strict_deterministic_invariants:
+        print("[mode] strict-deterministic-invariants: baseline provisioned; "
+              "protocol rules score from row 1; hard-rule alerts not suppressed")
     print(f"[phase-3/4] detecting anomalies with suppression to: {output_csv}")
     totals = detect_with_hybrid_ids(input_csv, output_csv, model, args)
 
